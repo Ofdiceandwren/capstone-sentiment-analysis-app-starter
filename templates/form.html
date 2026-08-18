@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sentiment Analysis</title>
+        <title>SentimentScope - Sentiment Analysis</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <form method="POST">
-            <textarea name="user_text" rows="5"></textarea>
-            <input type="submit" value="Analyze Text">
-        </form>
+        <div class="container">
+            <div class="header">
+                <h1>SentimentScope</h1>
+                <p>Analyze customer feedback with AI-powered sentiment analysis.</p>
+            </div>
+
+            <div class="card">
+                <form method="POST">
+                    <textarea name="user_text" rows="5" placeholder="Enter customer feedback or a review here..."></textarea>
+                    <button type="submit">Analyze Text</button>
+                </form>
+
+                {% if sentiment %}
+                    <div class="results">
+                        <h2>Analysis Results</h2>
+                        <p class="sentiment-label">Overall Sentiment: {{ sentiment['label'] }}</p>
+
+                        <div class="result-grid">
+                            <div class="result">
+                                <strong>Positive:</strong>
+                                <span>{{ sentiment['pos'] * 100 }}%</span>
+                            </div>
+
+                            <div class="result">
+                                <strong>Negative:</strong>
+                                <span>{{ sentiment['neg'] * 100 }}%</span>
+                            </div>
+
+                            <div class="result">
+                                <strong>Neutral:</strong>
+                                <span>{{ sentiment['neu'] * 100 }}%</span>
+                            </div>
+
+                            <div class="result">
+                                <strong>Compound:</strong>
+                                <span>{{ sentiment['compound'] }}</span>
+                            </div>
+                        </div>
+
+                        <div class="custom-model">
+                            <strong>Custom Model Positive</strong>
+                            <span>{{ sentiment['custom model positive'] * 100 }}%</span>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
     </body>
 </html>

@@ -1,1 +1,155 @@
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 60px auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+    font-size: 42px;
+}
+
+.header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: vertical;
+    font-family: Arial, sans-serif;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #4f46e5;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4338ca;
+}
+
+.results {
+    margin-top: 30px;
+}
+
+.results h2 {
+    margin-bottom: 20px;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.result {
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result strong {
+    display: block;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.result span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.custom-model {
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #eef2ff;
+    text-align: center;
+}
+
+.custom-model strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.custom-model span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.sentiment-label {
+    margin: 0 0 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background: #eef2ff;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 30px auto;
+    }
+
+    .results-subtitle {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    color: #6b7280;
+    font-size: 15px;
+}
+    
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
